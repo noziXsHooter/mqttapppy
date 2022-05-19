@@ -1,0 +1,63 @@
+<LoginScreen>
+
+    FloatLayout:
+
+#        MDToolbar:
+#            nd_bg_color: 1,1,1,0
+#           specific_text_color: app.theme_cls.primary_color
+#            elevation: 0
+#            pos_hint: {'top': 1}
+#            left_action_items: [["menu", lambda x: x]]
+#           left_action_items: [["icon-left", lambda x: root.callback()]]
+        canvas.before:
+            Color:
+                rgba: (0.16, 0.10, 0.31,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Image:
+            source: 'images/logoiot.png'
+            elevation: 20
+            size_hint: (0.3, 0.3)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+
+        MDLabel:
+            text: "Seja Bem Vindo!"
+            font_style: 'H5'
+            bold: True
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+
+        MDLabel:
+            text: "Faça login para continuar"
+            font_style: 'Caption'
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+
+        MDTextField:
+            hint_text: "Email"
+            icon_right: 'email'
+            line_color_normal: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint_x: .8
+
+        MDTextField:
+            hint_text: "Senha"
+            icon_right: 'lock'
+            line_color_normal: [1, 1, 1, 1]
+            icon_right_color: 1, 0, 0, 1
+            password: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            size_hint_x: .8
+
+        MDFillRoundFlatButton:
+            text: "Entrar"
+            font_size: 20
+            pos_hint: {'center_x': 0.5, 'center_y': 0.27}
+            size_hint_x: .5
+
+        MDTextButton:
+            text: "Esqueci minha senha"
+            font_size: 14
+            pos_hint: {'center_x': 0.5, 'center_y': 0.15}

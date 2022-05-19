@@ -1,0 +1,40 @@
+MDScreen:
+    name: "init"
+    MDFloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.16, 0.10, 0.31,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            source: 'logoiot.png'
+            elevation: 20
+            size_hint: (0.5, 0.5)
+            pos_hint: {'center_x': 0.50, 'center_y': .6}
+
+    MDLabel:
+        text: "IOT - Project"
+        pos_hint: {'center_x': 0.5, 'center_y': .3}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 1,1,1,1
+        font_size: "25sp"
+    MDLabel:
+        text: "Soluções em Internet das Coisas"
+        pos_hint: {'center_x': 0.5, 'center_y': .25}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 1,1,1,1
+        font_size: "15sp"
+
+    BoxLayout:
+        size_hint_y: 0.3
+        orientation: "vertical"
+        MDProgressBar:
+            id: spinner
+            type: "determinate"
+            size_hint_x: .5
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_kv_post:
+                self.start()

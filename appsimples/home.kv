@@ -1,0 +1,38 @@
+#:import MDIconButton kivymd.uix.button.MDIconButton
+
+GridLayout:
+    name: "home"
+
+<GridLayout@Gridlayout>:
+    cols:2
+    Button:
+
+    Button:
+        canvas.before:
+            Color:
+                rgba: (0.16, 0.10, 0.31,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            #background_color: (1,1,1,1)
+            user_font_size: "30sp"
+            md_bg_color: app.theme_cls.primary_color
+            size_hint: (1,1)
+            orientation: "vertical"
+            pos_hint: {'center_x': .2, 'center_y': 0.9}
+
+            MDIconButton:
+                icon: 'fish'
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.primary_color
+                user_font_size: "30sp"
+                pos_hint: {'center_x': .3, 'center_y': 0.6}
+
+            Switch:
+                on_active: on_switch_active(self)
+                pos_hint: {'center_x': .6, 'center_y': 0.3}
+                size_hint: None, 1
+
+
+
